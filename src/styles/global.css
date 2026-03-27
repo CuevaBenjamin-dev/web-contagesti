@@ -97,6 +97,13 @@ a {
   box-shadow: var(--shadow-card-hover);
 }
 
+.interactive-card-soft-active {
+  transform: scale(1.018);
+  background-color: var(--color-surface-soft-hover);
+  border-color: var(--color-border-soft-strong);
+  box-shadow: var(--shadow-card-hover);
+}
+
 /* Reusable typography */
 .type-h1,
 .type-h1-5,
@@ -170,6 +177,11 @@ a {
 .type-h5-5 {
   font-size: var(--fs-h5-5);
   line-height: 1.1;
+}
+
+.type-text-large {
+  font-size: var(--fs-h5-5);
+  line-height: var(--lh-body);
 }
 
 .type-text {
