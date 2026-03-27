@@ -1,0 +1,46 @@
+---
+const navItems = [
+  { label: "Hola", href: "#hola" },
+  { label: "Sobre nosotros", href: "#sobre-nosotros" },
+  { label: "Preguntas frecuentes", href: "#preguntas-frecuentes" },
+];
+---
+
+<header class="w-full bg-[#F8FAFB]">
+  <div
+    class="mx-auto flex h-[61px] max-w-[1280px] items-center justify-between px-4 md:px-0"
+  >
+    <a
+      href="/"
+      aria-label="Ir al inicio"
+      class="shrink-0 text-[28px] font-extrabold leading-none tracking-[-0.04em] text-[#163D4F]"
+    >
+      Contagesti
+    </a>
+
+    <div class="flex items-center gap-[38px] md:gap-[58px]"> 
+      <nav
+        aria-label="Navegación principal"
+        class="hidden md:flex items-center gap-[58px]"
+      >
+        {
+          navItems.map((item) => (
+            <a
+              href={item.href}
+              class="text-[14px] font-medium leading-none text-[#163D4F] transition-opacity duration-200 hover:opacity-80"
+            >
+              {item.label}
+            </a>
+          ))
+        }
+      </nav>
+
+      <a
+        href="#contacto"
+        class="inline-flex h-[36px] items-center justify-center rounded-full bg-[#2BB673] px-[24px] text-[14px] font-semibold leading-none text-white transition-transform duration-200 hover:scale-[1.02]"
+      >
+        Contáctanos
+      </a>
+    </div>
+  </div>
+</header>

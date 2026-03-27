@@ -1,0 +1,231 @@
+@import "@fontsource/nunito-sans/400.css";
+@import "@fontsource/nunito-sans/600.css";
+@import "@fontsource/nunito-sans/700.css";
+@import "@fontsource/nunito-sans/800.css";
+
+@import "./tokens.css";
+@import "tailwindcss";
+
+* {
+  box-sizing: border-box;
+}
+
+html {
+  scroll-behavior: smooth;
+}
+
+@media (min-width: 768px) {
+  html {
+    scroll-padding-top: var(--header-height);
+  }
+}
+
+body {
+  margin: 0;
+  min-height: 100vh;
+  background: var(--page-bg);
+  color: var(--color-text-main);
+  font-family: var(--font-main);
+}
+
+a {
+  text-decoration: none;
+}
+
+/* Advisory section animation */
+@keyframes advisorySoftFade {
+  0% {
+    opacity: 0;
+    transform: translateY(14px) scale(0.985);
+  }
+  100% {
+    opacity: 1;
+    transform: translateY(0) scale(1);
+  }
+}
+
+.animate-advisory-soft-fade {
+  animation: advisorySoftFade 0.75s cubic-bezier(0.22, 1, 0.36, 1);
+  will-change: opacity, transform;
+}
+
+/* Reusable motion */
+.interactive-button-soft {
+  transform: translateZ(0);
+  transition:
+    transform var(--transition-soft),
+    box-shadow var(--transition-soft),
+    background-color var(--transition-soft),
+    border-color var(--transition-soft),
+    color var(--transition-soft);
+  will-change: transform;
+}
+
+.interactive-button-soft:hover {
+  transform: scale(1.018);
+}
+
+.interactive-scale-soft {
+  transform: translateZ(0);
+  transition:
+    transform var(--transition-soft),
+    box-shadow var(--transition-soft),
+    background-color var(--transition-soft),
+    border-color var(--transition-soft),
+    color var(--transition-soft);
+  will-change: transform;
+}
+
+.interactive-scale-soft:hover {
+  transform: scale(1.018);
+}
+
+.interactive-card-soft {
+  transform: translateZ(0);
+  transition:
+    transform var(--transition-card),
+    background-color var(--transition-card),
+    border-color var(--transition-card),
+    box-shadow var(--transition-card);
+  will-change: transform;
+}
+
+.interactive-card-soft:hover {
+  transform: scale(1.018);
+  background-color: var(--color-surface-soft-hover);
+  border-color: var(--color-border-soft-strong);
+  box-shadow: var(--shadow-card-hover);
+}
+
+/* Reusable typography */
+.type-h1,
+.type-h1-5,
+.type-h2,
+.type-h2-5,
+.type-h3,
+.type-h3-5,
+.type-h4,
+.type-h4-5 {
+  font-weight: 800;
+}
+
+.type-h5,
+.type-h5-5 {
+  font-weight: 700;
+}
+
+.type-h1 {
+  font-size: var(--fs-h1);
+  line-height: var(--lh-display);
+  letter-spacing: var(--tracking-display);
+}
+
+.type-h1-5 {
+  font-size: var(--fs-h1-5);
+  line-height: var(--lh-display);
+  letter-spacing: var(--tracking-display);
+}
+
+.type-h2 {
+  font-size: var(--fs-h2);
+  line-height: var(--lh-display);
+  letter-spacing: var(--tracking-display);
+}
+
+.type-h2-5 {
+  font-size: var(--fs-h2-5);
+  line-height: var(--lh-heading);
+  letter-spacing: var(--tracking-display);
+}
+
+.type-h3 {
+  font-size: var(--fs-h3);
+  line-height: var(--lh-tight);
+  letter-spacing: var(--tracking-display);
+}
+
+.type-h3-5 {
+  font-size: var(--fs-h3-5);
+  line-height: var(--lh-heading);
+  letter-spacing: var(--tracking-title);
+}
+
+.type-h4 {
+  font-size: var(--fs-h4);
+  line-height: var(--lh-tight);
+  letter-spacing: var(--tracking-title);
+}
+
+.type-h4-5 {
+  font-size: var(--fs-h4-5);
+  line-height: var(--lh-heading);
+  letter-spacing: var(--tracking-title);
+}
+
+.type-h5 {
+  font-size: var(--fs-h5);
+  line-height: 1.1;
+}
+
+.type-h5-5 {
+  font-size: var(--fs-h5-5);
+  line-height: 1.1;
+}
+
+.type-text {
+  font-size: var(--fs-text);
+  line-height: var(--lh-body);
+}
+
+.type-text-sm {
+  font-size: var(--fs-text-sm);
+  line-height: 1.14;
+}
+
+/* Semantic aliases */
+.type-section-body {
+  font-size: var(--fs-text);
+  line-height: var(--lh-body);
+}
+
+.type-eyebrow {
+  font-size: var(--fs-text-sm);
+  letter-spacing: 0.18em;
+  font-weight: 600;
+}
+
+.type-panel-title {
+  font-size: var(--fs-h3);
+  line-height: var(--lh-tight);
+  letter-spacing: var(--tracking-display);
+  font-weight: 800;
+}
+
+.type-card-title {
+  font-size: var(--fs-h4);
+  line-height: var(--lh-tight);
+  letter-spacing: var(--tracking-title);
+  font-weight: 800;
+}
+
+.type-card-body {
+  font-size: var(--fs-text);
+  line-height: var(--lh-card);
+}
+
+.type-pill {
+  font-size: var(--fs-h5-5);
+  line-height: 1.1;
+  font-weight: 500;
+}
+
+.type-button {
+  font-size: var(--fs-button);
+  line-height: 1.1;
+  font-weight: 800;
+}
+
+.type-note {
+  font-size: var(--fs-text-sm);
+  line-height: 1.14;
+}

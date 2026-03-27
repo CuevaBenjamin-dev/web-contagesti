@@ -1,0 +1,41 @@
+---
+import Welcome from "../components/Welcome.astro";
+import Layout from "../layouts/Layout.astro";
+import ContagestiAccountingSectionMockups from "../components/a reutilizar luego/ContagestiAccountingSectionMockups";
+import ContabilidadSection from "../components/a reutilizar luego/ContabilidadSection";
+
+import SeccionComercialContabilidad from "../components/a reutilizar luego/SeccionComercialContabilidad";
+import SeccionComercialCapacitaciones from "../components/a reutilizar luego/SeccionComercialCapacitaciones";
+import SeccionComercialTransformacionDigital from "../components/a reutilizar luego/SeccionComercialTransformacionDigital";
+
+import FooterPrincipal from "../components/a reutilizar luego/FooterPrincipal";
+import Header from "../components/creados/Header.astro";
+import Headermejorado from "../components/creados/Header-mejorado.astro";
+
+//sections
+import Hero from "../components/sections/Hero";
+import AdvisoryCarousel from "../components/sections/AdvisoryCarousel";
+import AccountingSolutionsSection from "../components/sections/AccountingSolutionsSection";
+import TrainingSection from "../components/sections/TrainingSection";
+---
+
+<Layout title="Contagesti">
+  <!-- <SeccionComercialContabilidad href="/contabilidad" /> -->
+  <!-- <SeccionComercialCapacitaciones href="/capacitaciones" /> -->
+  <!-- <Header /> -->
+  <Headermejorado />
+  <Hero imageSrc="/images/image-hero.png" />
+  <AdvisoryCarousel client:load />
+  <AccountingSolutionsSection />
+  <TrainingSection
+    entrepreneurImageSrc="/images/image-contagesti-emprendedor.png"
+    teamImageSrc="/images/image-contagesti-equipo.png"
+  />
+  <FooterPrincipal
+    brandName="Contagesti"
+    phone="+51 999 999 999"
+    email="contacto@contagesti.com"
+    address="Trujillo, Perú"
+  />
+  <!-- <SeccionComercialTransformacionDigital href="/transformacion-digital" /> -->
+</Layout>
