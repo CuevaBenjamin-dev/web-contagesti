@@ -1,0 +1,391 @@
+---
+import Layout from "../layouts/Layout.astro";
+
+const featuredUpcomingEvent = {
+  title: "Encuentro para emprendedores y pequeños negocios",
+  status: "Próximamente",
+  date: "Fecha por confirmar",
+  time: "Modalidad presencial / cupos limitados",
+  location: "Trujillo, Perú",
+  description:
+    "Un espacio pensado para emprendedores y pequeños negocios que quieren ordenar mejor su empresa, tomar decisiones con más claridad y crecer con bases más sólidas.",
+  bullets: [
+    "Enfoque práctico y entendible",
+    "Temas de gestión, finanzas y crecimiento",
+    "Orientado a la realidad del negocio pequeño",
+  ],
+  image: "/images/eventos/evento-destacado.png",
+  ctaLabel: "Quiero reservar mi lugar",
+  ctaHref: "#contacto",
+};
+
+const upcomingEvents = [
+  {
+    title: "Formaliza tu negocio y evita errores desde el inicio",
+    date: "Fecha por confirmar",
+    mode: "Charla / Presencial",
+    summary:
+      "Sesión orientada a emprendedores que buscan empezar con orden, entender mejor su formalización y tomar mejores decisiones desde el inicio.",
+    image: "/images/eventos/proximo-1.png",
+    topics: ["Formalización", "Orden inicial", "Decisiones seguras"],
+  },
+  {
+    title: "Finanzas claras para vender y crecer con más control",
+    date: "Fecha por confirmar",
+    mode: "Taller / Presencial o virtual",
+    summary:
+      "Un taller práctico para entender mejor la rentabilidad, los números del negocio y cómo tomar decisiones con información útil.",
+    image: "/images/eventos/proximo-2.png",
+    topics: ["Rentabilidad", "Control financiero", "Crecimiento"],
+  },
+  {
+    title: "Automatiza tareas y gana tiempo en tu negocio",
+    date: "Fecha por confirmar",
+    mode: "Workshop / Virtual",
+    summary:
+      "Mostramos cómo reducir tareas repetitivas usando herramientas accesibles para WhatsApp, formularios, correos y seguimiento interno.",
+    image: "/images/eventos/proximo-3.png",
+    topics: ["Automatización", "WhatsApp", "Procesos"],
+  },
+];
+
+const pastEvents = [
+  {
+    title: "Nuestro primer evento para emprendedores",
+    date: "Realizado",
+    summary:
+      "Conferencia diseñada para generar conexiones e impulsar relaciones estratégicas entre líderes de negocio.",
+    topics: [
+      "Formalización de negocios",
+      "Cálculo de rentabilidad",
+      "Contratación y planilla MYPE",
+      "Cuentas bancarias empresariales",
+      "Ruta al primer crédito",
+      "Prevención de multas SUNAT",
+    ],
+    gallery: [
+      "/images/eventos/realizado-1-a.png",
+      "/images/eventos/realizado-1-b.png",
+      "/images/eventos/realizado-1-c.png",
+    ],
+  },
+  {
+    title: "Capacitación para emprendedores y equipos",
+    date: "Evento realizado",
+    summary:
+      "Espacio orientado a resolver dudas frecuentes, fortalecer conocimientos y acercar herramientas útiles para la gestión del negocio.",
+    topics: [
+      "Orden financiero",
+      "Gestión práctica",
+      "Decisiones con más claridad",
+    ],
+    gallery: [
+      "/images/eventos/realizado-2-a.png",
+      "/images/eventos/realizado-2-b.png",
+      "/images/eventos/realizado-2-c.png",
+    ],
+  },
+];
+
+const eventBenefits = [
+  "Contenido práctico, no solo teoría",
+  "Temas pensados para emprendedores y pequeñas empresas",
+  "Espacios para aprender, conectar y avanzar con más claridad",
+];
+---
+
+<Layout title="Eventos | Contagesti">
+  <main class="bg-[var(--page-bg)]">
+    <section class="bg-[var(--color-brand-blue)] py-14 sm:py-16 lg:py-20">
+      <div
+        class="mx-auto w-full max-w-[var(--section-max)] px-5 sm:px-8 lg:px-10"
+      >
+        <div class="mx-auto max-w-[980px] text-center">
+          <p
+            class="type-eyebrow uppercase text-[var(--color-text-on-dark)] opacity-80"
+          >
+            EVENTOS Y CAPACITACIONES
+          </p>
+
+          <h1 class="type-h1-5 mt-3 text-[var(--color-text-on-dark)]">
+            Espacios creados para{" "}
+            <span class="text-[var(--color-brand-green)]">
+              aprender, conectar y crecer
+            </span>
+          </h1>
+
+          <p
+            class="type-text mx-auto mt-4 max-w-[860px] text-[var(--color-text-on-dark)] opacity-90"
+          >
+            Aquí puedes ver los eventos que se vienen y los encuentros que ya
+            hemos realizado. La idea es acercar contenido útil, práctico y
+            entendible para emprendedores, microempresas y pequeñas empresas.
+          </p>
+        </div>
+
+        <div class="mt-8 flex flex-wrap justify-center gap-3">
+          {
+            eventBenefits.map((item) => (
+              <span class="interactive-scale-soft type-text-sm inline-flex items-center rounded-[var(--radius-pill)] border border-white/15 bg-white/10 px-4 py-2 text-[var(--color-text-on-dark)]">
+                {item}
+              </span>
+            ))
+          }
+        </div>
+      </div>
+    </section>
+
+    <section class="bg-[var(--page-bg)] py-14 sm:py-16 lg:py-20">
+      <div
+        class="mx-auto w-full max-w-[var(--section-max)] px-5 sm:px-8 lg:px-10"
+      >
+        <div class="grid items-center gap-8 lg:grid-cols-[1fr_1fr] lg:gap-10">
+          <div
+            class="overflow-hidden rounded-[var(--radius-card-lg)] shadow-[var(--shadow-card)]"
+          >
+            <img
+              src={featuredUpcomingEvent.image}
+              alt={featuredUpcomingEvent.title}
+              class="h-full w-full object-cover aspect-[1/0.9]"
+            />
+          </div>
+
+          <article
+            class="rounded-[var(--radius-card-lg)] border border-[var(--color-border-soft)] bg-[var(--color-surface-white)] p-7 shadow-[var(--shadow-card)] sm:p-8 lg:p-9"
+          >
+            <div class="flex flex-wrap items-center gap-3">
+              <span
+                class="type-text-sm rounded-[var(--radius-pill)] bg-[var(--color-surface-soft)] px-4 py-2 text-[var(--color-brand-blue-strong)]"
+              >
+                {featuredUpcomingEvent.status}
+              </span>
+              <span class="type-text-sm text-[var(--color-text-muted)]">
+                {featuredUpcomingEvent.date}
+              </span>
+            </div>
+
+            <h2 class="type-h3 mt-4 text-[var(--color-brand-blue-strong)]">
+              {featuredUpcomingEvent.title}
+            </h2>
+
+            <div class="mt-4 space-y-2">
+              <p class="type-text-sm text-[var(--color-text-muted)]">
+                {featuredUpcomingEvent.time}
+              </p>
+              <p class="type-text-sm text-[var(--color-text-muted)]">
+                {featuredUpcomingEvent.location}
+              </p>
+            </div>
+
+            <p class="type-card-body mt-5 text-[var(--color-text-body)]">
+              {featuredUpcomingEvent.description}
+            </p>
+
+            <div class="mt-5 space-y-3">
+              {
+                featuredUpcomingEvent.bullets.map((bullet) => (
+                  <div class="flex items-start gap-3">
+                    <span class="mt-1 h-[10px] w-[10px] shrink-0 rounded-full bg-[var(--color-brand-green)]" />
+                    <p class="type-text-sm text-[var(--color-text-body)]">
+                      {bullet}
+                    </p>
+                  </div>
+                ))
+              }
+            </div>
+
+            <a
+              href={featuredUpcomingEvent.ctaHref}
+              class="interactive-button-soft type-button mt-7 inline-flex min-h-[72px] items-center justify-center rounded-[var(--radius-button)] bg-[var(--color-brand-green)] px-8 text-center text-white shadow-[var(--shadow-button-green)] sm:min-w-[250px]"
+            >
+              {featuredUpcomingEvent.ctaLabel}
+            </a>
+          </article>
+        </div>
+      </div>
+    </section>
+
+    <section class="bg-[var(--color-surface-base)] py-14 sm:py-16 lg:py-20">
+      <div
+        class="mx-auto w-full max-w-[var(--section-max)] px-5 sm:px-8 lg:px-10"
+      >
+        <div class="mx-auto max-w-[900px] text-center">
+          <p class="type-eyebrow uppercase text-[var(--color-text-muted)]">
+            PRÓXIMOS EVENTOS
+          </p>
+
+          <h2 class="type-h2 mt-3 text-[var(--color-brand-blue-strong)]">
+            Lo que viene para nuestra comunidad
+          </h2>
+
+          <p class="type-text mt-4 text-[var(--color-text-body)]">
+            Esta sección está pensada para que Contagesti pueda actualizar los
+            próximos eventos fácilmente desde un arreglo de datos.
+          </p>
+        </div>
+
+        <div class="mt-10 grid gap-5 lg:grid-cols-3">
+          {
+            upcomingEvents.map((event) => (
+              <article class="interactive-card-soft rounded-[var(--radius-card-lg)] border border-[var(--color-border-soft)] bg-[var(--color-surface-white)] p-6 shadow-[var(--shadow-card)] sm:p-7">
+                <div class="overflow-hidden rounded-[var(--radius-card-md)]">
+                  <img
+                    src={event.image}
+                    alt={event.title}
+                    class="h-full w-full object-cover aspect-[1/0.8]"
+                  />
+                </div>
+
+                <div class="mt-5 flex flex-wrap items-center gap-3">
+                  <span class="type-text-sm rounded-[var(--radius-pill)] bg-[var(--color-surface-soft)] px-3 py-1.5 text-[var(--color-brand-blue-strong)]">
+                    Próximamente
+                  </span>
+                  <span class="type-text-sm text-[var(--color-text-muted)]">
+                    {event.date}
+                  </span>
+                </div>
+
+                <h3 class="type-card-title mt-4 text-[var(--color-brand-blue-strong)]">
+                  {event.title}
+                </h3>
+
+                <p class="type-text-sm mt-2 text-[var(--color-text-muted)]">
+                  {event.mode}
+                </p>
+
+                <p class="type-card-body mt-4 text-[var(--color-text-body)]">
+                  {event.summary}
+                </p>
+
+                <div class="mt-5 flex flex-wrap gap-2">
+                  {event.topics.map((topic) => (
+                    <span class="interactive-scale-soft type-text-sm inline-flex items-center rounded-[var(--radius-pill)] border border-[var(--color-border-soft)] bg-[var(--color-surface-soft)] px-3 py-1.5 text-[var(--color-text-body)]">
+                      {topic}
+                    </span>
+                  ))}
+                </div>
+              </article>
+            ))
+          }
+        </div>
+      </div>
+    </section>
+
+    <section class="bg-[var(--page-bg)] py-14 sm:py-16 lg:py-20">
+      <div
+        class="mx-auto w-full max-w-[var(--section-max)] px-5 sm:px-8 lg:px-10"
+      >
+        <div class="mx-auto max-w-[900px] text-center">
+          <p class="type-eyebrow uppercase text-[var(--color-text-muted)]">
+            EVENTOS REALIZADOS
+          </p>
+
+          <h2 class="type-h2 mt-3 text-[var(--color-brand-blue-strong)]">
+            Experiencias que ya compartimos
+          </h2>
+
+          <p class="type-text mt-4 text-[var(--color-text-body)]">
+            Contagesti ya ha mostrado públicamente un primer evento para
+            emprendedores con foco en formalización, rentabilidad, planilla
+            MYPE, cuentas bancarias empresariales, primer crédito y prevención
+            de multas SUNAT. Esa línea sirve como buena base para esta página de
+            eventos.
+          </p>
+        </div>
+
+        <div class="mt-10 space-y-8">
+          {
+            pastEvents.map((event) => (
+              <article class="rounded-[var(--radius-card-lg)] border border-[var(--color-border-soft)] bg-[var(--color-surface-white)] p-6 shadow-[var(--shadow-card)] sm:p-7 lg:p-8">
+                <div class="grid gap-6 lg:grid-cols-[0.95fr_1.05fr] lg:items-start">
+                  <div>
+                    <div class="flex flex-wrap items-center gap-3">
+                      <span class="type-text-sm rounded-[var(--radius-pill)] bg-[var(--color-surface-soft)] px-3 py-1.5 text-[var(--color-brand-blue-strong)]">
+                        {event.date}
+                      </span>
+                      <span class="type-text-sm text-[var(--color-text-muted)]">
+                        Galería del evento
+                      </span>
+                    </div>
+
+                    <h3 class="type-h4 mt-4 text-[var(--color-brand-blue-strong)]">
+                      {event.title}
+                    </h3>
+
+                    <p class="type-card-body mt-4 text-[var(--color-text-body)]">
+                      {event.summary}
+                    </p>
+
+                    <div class="mt-5 space-y-3">
+                      {event.topics.map((topic) => (
+                        <div class="flex items-start gap-3">
+                          <span class="mt-1 h-[10px] w-[10px] shrink-0 rounded-full bg-[var(--color-brand-green)]" />
+                          <p class="type-text-sm text-[var(--color-text-body)]">
+                            {topic}
+                          </p>
+                        </div>
+                      ))}
+                    </div>
+                  </div>
+
+                  <div class="grid grid-cols-1 gap-4 sm:grid-cols-3">
+                    {event.gallery.map((image, imageIndex) => (
+                      <div class="overflow-hidden rounded-[var(--radius-card-md)] shadow-[var(--shadow-card)]">
+                        <img
+                          src={image}
+                          alt={`${event.title} - foto ${imageIndex + 1}`}
+                          class="h-full w-full object-cover aspect-[1/1]"
+                        />
+                      </div>
+                    ))}
+                  </div>
+                </div>
+              </article>
+            ))
+          }
+        </div>
+      </div>
+    </section>
+
+    <section
+      id="contacto"
+      class="bg-[var(--color-brand-blue)] py-14 sm:py-16 lg:py-20"
+    >
+      <div
+        class="mx-auto w-full max-w-[var(--section-max)] px-5 sm:px-8 lg:px-10"
+      >
+        <div
+          class="rounded-[var(--radius-card-lg)] border border-white/10 bg-white/10 p-7 text-center text-[var(--color-text-on-dark)] sm:p-8 lg:p-10"
+        >
+          <p class="type-eyebrow uppercase opacity-80">¿QUIERES PARTICIPAR?</p>
+
+          <h2 class="type-h2 mt-3 text-[var(--color-text-on-dark)]">
+            Súmate a los próximos encuentros de{" "}
+            <span class="text-[var(--color-brand-green)]">Contagesti</span>
+          </h2>
+
+          <p class="type-text mx-auto mt-4 max-w-[860px] opacity-90">
+            Si quieres enterarte de próximos eventos, reservar tu lugar o
+            coordinar una charla para tu comunidad o empresa, conversemos.
+          </p>
+
+          <div class="mt-8 flex flex-col gap-4 sm:flex-row sm:justify-center">
+            <a
+              href="/#contacto"
+              class="interactive-button-soft type-button inline-flex min-h-[72px] items-center justify-center rounded-[var(--radius-button)] bg-[var(--color-brand-green)] px-8 text-center text-white shadow-[var(--shadow-button-green)] sm:min-w-[230px]"
+            >
+              Quiero información
+            </a>
+
+            <a
+              href="/sobre-nosotros"
+              class="interactive-button-soft type-button inline-flex min-h-[72px] items-center justify-center rounded-[var(--radius-button)] border border-white/15 bg-transparent px-8 text-center text-[var(--color-text-on-dark)] sm:min-w-[230px]"
+            >
+              Conocer más de Contagesti
+            </a>
+          </div>
+        </div>
+      </div>
+    </section>
+  </main>
+</Layout>
